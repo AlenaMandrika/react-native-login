@@ -6,8 +6,7 @@ Prerequisites:
 Android Studio
 
 ## Instructions
-1. Clone the repo: 
+1. Clone the repo: https://github.com/AlenaMandrika/react-native-login 
 2. Install packages: `npm install` and `npm start` in folder react-native
-3. Install packages: `npm install` in folder backend
-4. Launch: `node backend/server/app.js`
-5. Visit in your browser at: `http://localhost:3005`
+3. server: `https://react-native-login-register.herokuapp.com/api/v1/user`
+
