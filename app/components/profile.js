@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   View,
   Text,
   StyleSheet } from 'react-native';
@@ -30,6 +29,3 @@ const styles = StyleSheet.create({
     color:'#000', textAlign:'center'
   }
 });
-
-
-// AppRegistry.registerComponent('profile', () => profile);
