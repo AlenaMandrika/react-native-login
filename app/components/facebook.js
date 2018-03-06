@@ -30,7 +30,6 @@ export default class login extends Component {
     return (
       <View style={styles.container}>
         <Text>Facebook</Text>
-
       </View>
     );
   }

@@ -4,12 +4,13 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity} from 'react-native';
-// import FBSDK, {LoginManager} from 'react-native-fbsdk'
+// import FBSDK, { LoginManager } from 'react-native-fbsdk'
 
 export default class home extends Component{
   static navigationOptions= ({navigation}) =>({
     title: 'Welcome',
   });
+
   // _fbAuth () {
   //   LoginManager.logInWithReadPermissions(['public_profile']).then(
   //     function(result) {
@@ -43,6 +44,7 @@ export default class home extends Component{
         </TouchableOpacity>
 
         <TouchableOpacity
+          onPress={()=> navigate('Facebook')}
           // onPress={this._fbAuth()}
           style={styles.btn3}>
           <Text style={styles.btnText}>Facebook</Text>
