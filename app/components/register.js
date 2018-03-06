@@ -90,7 +90,7 @@ export default class register extends Component {
 
         <TouchableOpacity
           onPress={this.userRegister}
-          style={{width:250,padding:10, backgroundColor:'blue', alignItems:'center'}}>
+          style={{width:250,padding:10, backgroundColor:'green', alignItems:'center'}}>
           <Text style={{color:'#fff'}}>Signup</Text>
         </TouchableOpacity>
       </View>

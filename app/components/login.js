@@ -46,7 +46,6 @@ export default class login extends Component {
     } else if (userPassword === '') {
       this.setState({message: 'Please enter password'})
     }
-
     axios.post('https://react-native-login-register.herokuapp.com/api/v1/user', {
       user: {
         userEmail: email,

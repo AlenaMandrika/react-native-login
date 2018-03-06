@@ -4,20 +4,19 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity} from 'react-native';
-// import FBSDK, {loginManager} from 'react-native-fbsdk'
+// import FBSDK, {LoginManager} from 'react-native-fbsdk'
 
 export default class home extends Component{
   static navigationOptions= ({navigation}) =>({
     title: 'Welcome',
   });
-  // fbAuth () {
+  // _fbAuth () {
   //   LoginManager.logInWithReadPermissions(['public_profile']).then(
   //     function(result) {
   //       if (result.isCancelled) {
   //         alert('Login cancelled');
   //       } else {
-  //         alert('Login success with permissions: '
-  //           +result.grantedPermissions.toString());
+  //         alert('Login success with permissions: ' +result.grantedPermissions.toString());
   //       }
   //     },
   //     function(error) {
@@ -44,7 +43,7 @@ export default class home extends Component{
         </TouchableOpacity>
 
         <TouchableOpacity
-          // onPress={this.fbAuth()}
+          // onPress={this._fbAuth()}
           style={styles.btn3}>
           <Text style={styles.btnText}>Facebook</Text>
         </TouchableOpacity>
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     width:'95%'
   },
   btn2:{
-    backgroundColor:'blue',
+    backgroundColor:'green',
     padding:20,
     margin:10,
     width:'95%'
