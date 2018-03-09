@@ -24,49 +24,45 @@ export default class login extends Component {
     this.state = {
       user: [],
       userEmail: '',
-      userPassword: ''
+      userPassword: '',
+      redirect: ""
     }
     // this.saveUser = this.saveUser.bind(this)
   }
 
-  componentWillMount () {
+  componentDidMount () {
     axios.get('https://react-native-login-register.herokuapp.com/api/v1/user')
       .then(response => this.setState({user: response.data.user}))
   }
 
   login = () => {
     const {userEmail, userPassword} = this.state
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if (userEmail === '') {
-      this.setState({message: 'Please enter Email address'})
-    } else if (reg.test(userEmail) === false) {
-      this.setState({message: 'Email is Not Correct'})
-      return false
-    } else if (userPassword === '') {
-      this.setState({message: 'Please enter password'})
-    }
-    axios.post('https://react-native-login-register.herokuapp.com/api/v1/user', {
-      user: {
-        email: this.state.userEmail,
-        password: this.state.userPassword
+
+    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    // if (userEmail === '') {
+    //   this.setState({message: 'Please enter Email address'})
+    // } else if (reg.test(userEmail) === false) {
+    //   this.setState({message: 'Email is Not Correct'})
+    //   return false
+    // } else if (userPassword === '') {
+    //   this.setState({message: 'Please enter password'})
+    // }
+    this.state.user.forEach((data)=>{
+      if(data.email === this.state.userEmail)
+      {
+        const {navigate} = this.props.navigation;
+         alert(`Hello ${this.state.userEmail}`);
+        this.setState({redirect: "Profile"})
+
+      } else {
+        this.setState({redirect: "Register"})
       }
     })
-      .then((response) => {
-        alert(JSON.stringify(response.data.user))
-
-        this.setState({
-          user: response.data.user,
-          userEmail: '',
-          userPassword: ''
-        })
-      })
-    // .catch((error)=>{
-    //   console.log(44, error)
-    // })
   }
 
   render () {
-    // alert(JSON.stringify(this.state.user))
+    const {navigate} = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <Text style={{padding: 10, margin: 10, color: 'red'}}>{this.state.message}</Text>
@@ -93,6 +89,14 @@ export default class login extends Component {
           style={{width: 200, padding: 10, backgroundColor: 'orange', alignItems: 'center'}}>
           <Text style={{color: 'white'}}>Login</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={()=> navigate(this.state.redirect)}
+          style={styles.btn3}>
+          <Text style={styles.btnText}>{this.state.redirect}</Text>
+        </TouchableOpacity>
+
+        {/*{redirect}*/}
 
       </View>
     )
