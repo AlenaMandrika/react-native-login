@@ -26,6 +26,7 @@
             "outputFile": "/Users/alenamandrika/WebstormProjects/react-native-login/android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-el/values-el.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "/Users/alenamandrika/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/597302e8c9c91ea6107351b671facb8f/res/values-el/values-el.xml",
                     "from": {
                         "startLines": "2",
@@ -74,6 +75,22 @@
                         "startOffsets": "105,223,334,451,536,641,767,855,941,1026,1137,1247,1349,1460,1569,1677,1837,4568",
                         "endColumns": "117,110,116,84,104,125,87,85,84,110,109,101,110,108,107,159,99,84",
                         "endOffsets": "218,329,446,531,636,762,850,936,1021,1132,1242,1344,1455,1564,1672,1832,1932,4648"
+=======
+                    "source": "/Users/alenamandrika/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/8c2ea2d11ecf57cd3d3385ca176030e1/res/values-el/values-el.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "280,398,506,629,740,857,942,1047,1173,1258,1369,1479,1581,1692,1801,1909,2032,2132",
+                        "endColumns": "117,107,122,110,116,84,104,125,84,110,109,101,110,108,107,122,99,100",
+                        "endOffsets": "393,501,624,735,852,937,1042,1168,1253,1364,1474,1576,1687,1796,1904,2027,2127,2228"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,173,281,404,515,632,717,822,948,1033,1144,1254,1356,1467,1576,1684,1807,1907",
+                        "endColumns": "117,107,122,110,116,84,104,125,84,110,109,101,110,108,107,122,99,100",
+                        "endOffsets": "168,276,399,510,627,712,817,943,1028,1139,1249,1351,1462,1571,1679,1802,1902,2003"
+>>>>>>> first
                     }
                 }
             ]

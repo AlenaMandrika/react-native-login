@@ -48,8 +48,20 @@
             "outputFile": "/Users/alenamandrika/WebstormProjects/react-native-login/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "/Users/alenamandrika/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/52b84b3876e066c4599ecb9bb61ea507/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
+=======
+                    "source": "/Users/alenamandrika/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/8c2ea2d11ecf57cd3d3385ca176030e1/res/values-h720dp/values-h720dp.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "283",
+                        "endColumns": "66",
+                        "endOffsets": "345"
+                    },
+                    "to": {
+>>>>>>> first
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",

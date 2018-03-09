@@ -5,8 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  TextInput,
-  Button
+  TextInput
 } from 'react-native'
 
 export default class login extends Component {
@@ -27,6 +26,7 @@ export default class login extends Component {
       userEmail: '',
       userPassword: ''
     }
+    // this.saveUser = this.saveUser.bind(this)
   }
 
   componentWillMount () {
@@ -39,7 +39,6 @@ export default class login extends Component {
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (userEmail === '') {
       this.setState({message: 'Please enter Email address'})
-
     } else if (reg.test(userEmail) === false) {
       this.setState({message: 'Email is Not Correct'})
       return false
@@ -54,7 +53,7 @@ export default class login extends Component {
     })
       .then((response) => {
         this.setState({
-          user: this.state.user.push(response.data.user),
+          user: response.data.user,
           userEmail: '',
           userPassword: ''
         })

@@ -1,5 +1,9 @@
 #Internal package file, do not edit.
+<<<<<<< HEAD
 #Mon Mar 05 22:25:35 EET 2018
+=======
+#Fri Mar 09 13:11:04 EET 2018
+>>>>>>> first
 17.baseType=DIRECTORY
 4.path=lib/x86/libicu_common.so
 25.base=/Users/alenamandrika/WebstormProjects/react-native-login/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
