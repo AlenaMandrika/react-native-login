@@ -28,7 +28,8 @@ export default class register extends Component {
       userPassword:''
     }
   }
-  componentWillMount() {
+
+  componentDidlMount() {
     axios.get('https://react-native-login-register.herokuapp.com/api/v1/user')
       .then(response => this.setState({user: response.data.user}))
   }
@@ -58,7 +59,7 @@ export default class register extends Component {
       }
     })
       .then((response) => {
-        alert(JSON.stringify(response.data.user))
+        // alert(JSON.stringify(response.data.user))
 
         this.setState({
           user: response.data.user,
@@ -70,10 +71,14 @@ export default class register extends Component {
     // .catch((error)=>{
     //   console.log(44, error)
     // })
+    const {navigate} = this.props.navigation;
+    alert(`Hello ${this.state.userName}, please go to the LOGIN tab`);
+    this.setState({redirect: "Login"})
   }
 
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text style={{padding:10,margin:10,color:'red'}}>{this.state.message}</Text>
@@ -107,6 +112,11 @@ export default class register extends Component {
           style={{width:250,padding:10, backgroundColor:'green', alignItems:'center'}}>
           <Text style={{color:'#fff'}}>Signup</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={()=> navigate(this.state.redirect)}>
+          <Text style={styles.btnText}>{this.state.redirect}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -129,4 +139,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  btnText: {
+    color:'#000',
+    fontSize: 20,
+    fontWeight:'bold'
+  }
 });

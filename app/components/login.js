@@ -25,7 +25,7 @@ export default class login extends Component {
       user: [],
       userEmail: '',
       userPassword: '',
-      redirect: ""
+      redirect: ''
     }
   }
 
@@ -48,12 +48,12 @@ export default class login extends Component {
     }
 
     this.state.user.forEach((data)=>{
-      if(data.email === this.state.userEmail) {
+      if(data.email === this.state.userEmail && data.password === this.state.userPassword) {
         const {navigate} = this.props.navigation;
-         alert(`Hello ${this.state.userEmail}`);
-        this.setState({redirect: "Profile"})
-
+        alert(`Hello ${this.state.userEmail}, please go to the CHAT tab`);
+        this.setState({redirect: "Chat"})
       } else {
+        alert(`Hello, please go to the REGISTER tab`);
         this.setState({redirect: "Register"})
       }
     })
