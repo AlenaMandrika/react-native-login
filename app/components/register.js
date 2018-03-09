@@ -22,6 +22,7 @@ export default class register extends Component {
   constructor(props){
     super(props)
     this.state={
+      user: [],
       userName:'',
       userEmail:'',
       userPassword:''
@@ -32,7 +33,7 @@ export default class register extends Component {
       .then(response => this.setState({user: response.data.user}))
   }
 
-  userRegister = (email, password, name) =>{
+  userRegister = () => {
     const {userName} = this.state;
     const {userEmail} = this.state;
     const {userPassword} = this.state;
@@ -51,13 +52,26 @@ export default class register extends Component {
 
     axios.post(`https://react-native-login-register.herokuapp.com/api/v1/user`, {
       user: {
-        userName: name,
-        userEmail: email,
-        userPassword: password
+        email: this.state.userEmail,
+        password: this.state.userPassword,
+        username: this.state.userName,
       }
     })
-      .then(response => this.setState({user: this.state.user.push(response.data.user), userEmail:'', userPassword: '', userName: ''}))
+      .then((response) => {
+        alert(JSON.stringify(response.data.user))
+
+        this.setState({
+          user: response.data.user,
+          userName: '',
+          userEmail: '',
+          userPassword: ''
+        })
+      })
+    // .catch((error)=>{
+    //   console.log(44, error)
+    // })
   }
+
 
   render() {
     return (

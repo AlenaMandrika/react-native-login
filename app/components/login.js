@@ -34,7 +34,7 @@ export default class login extends Component {
       .then(response => this.setState({user: response.data.user}))
   }
 
-  login = (email, password) => {
+  login = () => {
     const {userEmail, userPassword} = this.state
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (userEmail === '') {
@@ -47,11 +47,13 @@ export default class login extends Component {
     }
     axios.post('https://react-native-login-register.herokuapp.com/api/v1/user', {
       user: {
-        userEmail: email,
-        userPassword: password
+        email: this.state.userEmail,
+        password: this.state.userPassword
       }
     })
       .then((response) => {
+        alert(JSON.stringify(response.data.user))
+
         this.setState({
           user: response.data.user,
           userEmail: '',
