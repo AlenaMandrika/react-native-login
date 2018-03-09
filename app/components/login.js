@@ -27,7 +27,6 @@ export default class login extends Component {
       userPassword: '',
       redirect: ""
     }
-    // this.saveUser = this.saveUser.bind(this)
   }
 
   componentDidMount () {
@@ -38,18 +37,18 @@ export default class login extends Component {
   login = () => {
     const {userEmail, userPassword} = this.state
 
-    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    // if (userEmail === '') {
-    //   this.setState({message: 'Please enter Email address'})
-    // } else if (reg.test(userEmail) === false) {
-    //   this.setState({message: 'Email is Not Correct'})
-    //   return false
-    // } else if (userPassword === '') {
-    //   this.setState({message: 'Please enter password'})
-    // }
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if (userEmail === '') {
+      this.setState({message: 'Please enter Email address'})
+    } else if (reg.test(userEmail) === false) {
+      this.setState({message: 'Email is Not Correct'})
+      return false
+    } else if (userPassword === '') {
+      this.setState({message: 'Please enter password'})
+    }
+
     this.state.user.forEach((data)=>{
-      if(data.email === this.state.userEmail)
-      {
+      if(data.email === this.state.userEmail) {
         const {navigate} = this.props.navigation;
          alert(`Hello ${this.state.userEmail}`);
         this.setState({redirect: "Profile"})
@@ -91,12 +90,9 @@ export default class login extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={()=> navigate(this.state.redirect)}
-          style={styles.btn3}>
+          onPress={()=> navigate(this.state.redirect)}>
           <Text style={styles.btnText}>{this.state.redirect}</Text>
         </TouchableOpacity>
-
-        {/*{redirect}*/}
 
       </View>
     )
@@ -110,4 +106,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  btnText: {
+    color:'#000',
+    fontSize: 20,
+    fontWeight:'bold'
+  }
 })
