@@ -29,7 +29,7 @@ export default class register extends Component {
     }
   }
 
-  componentDidlMount() {
+  componentDidMount() {
     axios.get('https://react-native-login-register.herokuapp.com/api/v1/user')
       .then(response => this.setState({user: response.data.user}))
   }

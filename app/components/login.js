@@ -48,7 +48,7 @@ export default class login extends Component {
     }
 
     this.state.user.forEach((data)=>{
-      if(data.email === this.state.userEmail && data.password === this.state.userPassword) {
+      if(data.email === this.state.userEmail) {
         const {navigate} = this.props.navigation;
         alert(`Hello ${this.state.userEmail}, please go to the CHAT tab`);
         this.setState({redirect: "Chat"})
